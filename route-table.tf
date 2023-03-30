@@ -52,9 +52,9 @@ resource "aws_route_table_association" "private-rt-association" {
   route_table_id = aws_route_table.private-rt.id
 }
 
-# Add peering route in the defaulr VPC Route Table
-resource "aws_route" "peer-route" {
-  route_table_id            = var.DEFAULT_VPC_RT
-  destination_cidr_block    = var.VPC_CIDR
-  vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
-}
+# # Add peering route in the defaulr VPC Route Table
+# resource "aws_route" "peer-route" {
+#   route_table_id            = var.DEFAULT_VPC_RT
+#   destination_cidr_block    = var.VPC_CIDR
+#   vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
+# }
