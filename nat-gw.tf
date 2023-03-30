@@ -6,7 +6,7 @@ resource "aws_eip" "ngw-aws_eip" {
   }
 }
 #creates a NAT gateway
-resource "aws_nat_gateway" "example" {
+resource "aws_nat_gateway" "ngw" {
   allocation_id = aws_eip.ngw-aws_eip.id
   subnet_id     = aws_subnet.public-subnet.*.id[0]
 
