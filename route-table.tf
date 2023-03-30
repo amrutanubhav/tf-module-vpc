@@ -33,10 +33,10 @@ resource "aws_route_table" "private-rt" {
     gateway_id = aws_internet_gateway.ngw.id
   }
 
-#   route {
-#     cidr_block = var.DEFAULT_VPC_CIDR
-#     gateway_id = aws_internet_gateway.igw.id
-#   }
+  route {
+    cidr_block = var.DEFAULT_VPC_CIDR
+    vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
+  }
 
   tags = {
     Name = "robot-${var.ENV}-private-rt"
