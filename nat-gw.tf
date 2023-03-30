@@ -1,5 +1,5 @@
 #provisions an elastic Ip needed for nat gateway
-resource "aws_eip" "ngw-aws_eip" {
+resource "aws_eip" "ngw-eip" {
   vpc      = true
   tags = {
     Name = "robot-${var.ENV}-ngw-elastic-ip"
